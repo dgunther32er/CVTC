@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Auto Loan Calculator</title>
+    <link rel="stylesheet" href="./stylesheet/styles.css">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"> </script>
+    <![endif]-->   
+  </head>
+  <body>
+    <header>
+      <h1>Auto Loan Calculator</h1>
+    </header>
+      <main>
+        <script src="js/autoLoanCalculator.js"></script>
+    
+        <article>
+          <p>This calculator is based on a fix interest rate loan.</p>
+          <p>Please enter in number values.</P>
+        </article>
+    
+        <p>Vehicle Price: $<input id="amount" type="number" min="1" max= "10000000" step="0.01" onchange="autoLoanCalculator()"></P>
+        
+        <p>Tax Rate: <input id="tax" type="number" min="0" max="100" value="10" step="0.1" onchange="autoLoanCalculator()">%</p>
+        
+        <p>Interest Rate: <input id="interest" type="number" min="0" max="100" value="3.00" step="0.01" onchange="autoLoanCalculator()">%</p>
+        
+        <p>Term are in Months: <input id="term" type="number" min="1" max="1200" value="12" step="1" onchange="autoLoanCalculator()"></p>
+        
+        <p>Click on Monthly Payment to Refresh changes made.</P>
+        
+        <h2 id="monthlyPayment" onclick="autoLoanCalculator()">Monthly Payment</h2>
+        
+        
+        
+        <table  ></table>
+      </main>
+      
+
+    <footer>
+      <small>Copyright &copy; 2015 Darrin Gunther</small>
+    </footer>  
+  </body>
+</html>

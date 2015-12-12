@@ -1,0 +1,33 @@
+
+h1,h2,h3{
+  margin-top: 0;
+  text-align: center;  
+}
+
+header>h1{
+  background-color: #236267;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;  
+  margin-bottom: 0;
+  height: 90px;
+}
+
+body{
+  font-family: Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
+  font-size: 16px;
+}
+
+
+p{
+  display: block;
+  text-align: center;  
+}
+
+footer{
+  background-color: #236267;
+  text-align: center;
+  color: #000;
+  height: 35px;
+}
+

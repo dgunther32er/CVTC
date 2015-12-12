@@ -1,0 +1,266 @@
+PROBLEM STATEMENT:
+Write a program to calculate a car loan monthly payment. Use sales tax and the interest rate along with term to find the monthly payment. It should show to vehicle price, tax rate, interest rate, term, and monthly payment. 
+
+Nouns:
+a program to calculate a car loan monthly payment 
+should show to vehicle price, tax rate, interest rate, term, and monthly payment
+
+Verbs:
+prompt
+calculate
+display
+
+/-----------------------------------------------------------------------------/
+
+DEFINING DIAGRAM
+
+INPUTS:
+
+amount
+monthlyPayment
+interest
+interestRate
+tax
+taxRate
+
+PROCESSING:
+
+FUNCTION autoLoanCalculator
+  set amount  display "amount" value
+  check for number
+  set tax  display "tax" value;
+  check for number
+  set interest  display "interest" value
+  check for number
+  set term  display "term" value
+  check for number
+  set taxRate  (amount * (tax / 100)) / term 
+  set interestRate  (amount * (interest / 100)) / term
+  set monthlyPayment  ((amount / term) + taxRate + interestRate) set to two 
+  
+  display "monthlyPayment" set to HTML  "Monthly Payment"  monthlyPayment      
+END FUNCTION
+
+OUTPUTS:
+
+set to html page
+
+/-----------------------------------------------------------------------------/
+
+PSEUDOCODE
+
+SOLUTION ALGORITHM GOES HERE:
+
+//Car Loan Calculator
+FUNCTION autoLoanCalculator
+  ini amount to document.getElementById "amount" value
+  WHILE amount is not a number
+  amount to display "Please enter the price of vehicle. Press Enter 
+  document.getElementById "amount" value to amount 
+    IF amount is a number
+    document.getElementById "amount" value to amount  
+    ENDIF  
+  ENDWHILE
+  
+  ini tax to document.getElementById "tax" value
+  WHILE tax is not a number
+  tax to display "Please enter the tax rate"
+  document.getElementById "tax" value to tax  
+    IFtax is a number
+    document.getElementById "tax" value to tax 
+    ENDIF
+  ENDWHILE
+
+  ini interest to  document.getElementById "interest" value
+  WHILE interest is not a number
+  interest to display "Please enter a interest"
+  document.getElementById "interest" value to interest    
+    IF interest is a number
+      document.getElementById "interest"  value to interest
+    ENDIF
+  ENDWHILE
+
+  ini term to  document.getElementById "term" value 
+  WHILE term is not a number
+  term to display "Please enter a number"
+  document.getElementById "term" value to term     
+    IF term is a number
+      document.getElementById "term" value to term
+    ENDIF
+  ENDWHILE  
+ 
+  ini taxRate to (amount * (tax / 100)) / term 
+  ini interestRate to (amount * (interest / 100)) / term
+  ini monthlyPayment to ((amount / term) + taxRate + interestRate).toFixed(2)
+  
+  document.getElementById "monthlyPayment" innerHTML to "Monthly Payment = $" + monthlyPayment 
+ENDFUNCTION 
+//end
+ 
+/-----------------------------------------------------------------------------/
+
+VARIABLES:
+
+TEST CASE 1: 
+
+INPUT VALUES:
+VP: $12000
+TR: 10
+IR: 3
+T: 12
+
+EXPECTED RESULT:
+VP: 12000
+TR: 10
+IR: 3
+T: 12
+MP: $1130.00 
+
+ACTUAL RESULT:
+VP: 12000
+TR: 10
+IR: 3
+T: 12
+MP: $1130.00
+  
+===============================================================================
+
+TEST CASE 2:
+
+INPUT VALUES:
+VP: er
+TR: 10
+IR: 3 
+T: 12
+
+EXPECTED RESULT:
+VP: er (will not work till user inputs a numeric value)
+TR: 10
+IR: 3 
+T: 12
+MP: $NaN  
+
+ACTUAL RESULT:
+VP: er (did not work till user inputs a numeric value)
+TR: 10
+IR: 3 
+T: 12
+MP: $NaN
+  
+===============================================================================
+
+TEST CASE 3:
+
+INPUT VALUES:
+VP: 98652
+TR: 5.5
+IR: 3.18
+T: 72
+
+EXPECTED RESULT:
+VP: 98652
+TR: 5.5
+IR: 3.18
+T: 72
+MP: $1489.10 
+
+ACTUAL RESULT:
+VP: 98652
+TR: 5.5
+IR: 3.18
+T: 72
+MP: $1489.10 
+ 
+===============================================================================  
+TEST CASE 4:
+
+INPUT VALUES:
+VP: 123
+TR: dog
+IR: 20
+T: 72 
+
+EXPECTED RESULT:
+VP: 123
+TR: dog (will not work till user inputs a numeric value)
+IR: 20
+T: 72 
+MP: $NaN 
+
+ACTUAL RESULT:
+VP: 123
+TR: dog (did not work till user inputs a numeric value)
+IR: 20
+T: 72 
+MP: $NaN 
+=============================================================================== 
+TEST CASE 5:
+
+INPUT VALUES:
+VP: 1200
+TR: 3.2
+IR: cat
+T: 12
+
+
+EXPECTED RESULT:
+VP: 1200
+TR: 3.2
+IR: cat (will not work till user inputs a numeric value)
+T: 12
+MP: $NaN 
+
+ACTUAL RESULT:
+VP: 1200
+TR: 3.2
+IR: cat (did not work till user inputs a numeric value)
+T: 12
+MP: $NaN
+===============================================================================
+TEST CASE 6:
+
+INPUT VALUES:
+VP: 9999
+TR: 1.3
+IR: 2.33
+T: fish
+
+EXPECTED RESULT:
+VP: 9999
+TR: 1.3
+IR: 2.33
+T: fish (will not work till user inputs a numeric value)
+MP: $NaN
+
+
+ACTUAL RESULT:
+VP: 9999
+TR: 1.3
+IR: 2.33
+T: fish (did not work till user inputs a numeric value)
+MP: $NaN
+ 
+===============================================================================
+
+TEST CASE 7:
+
+INPUT VALUES:
+VP: 1200
+TR: 10
+IR: 10
+T: 12
+
+EXPECTED RESULT:
+VP: 1200
+TR: 10
+IR: 10
+T: 12
+MP: $120.00
+
+ACTUAL RESULT:
+VP: 1200
+TR: 10
+IR: 10
+T: 12
+MP: $120.00 
+  
